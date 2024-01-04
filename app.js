@@ -1,11 +1,10 @@
-const http = require('http');
+const http = require("http");
 
+http
+  .createServer(function (req, res) {
+    res.write("on the way of being fullstack engineer");
+    res.end();
+  })
+  .listen(3000);
 
-http.createServer(function (req,res){
-res.write("on the way of being fullstack engineer");
-res.end();
-
-
-}).listen(3000);
-
-console.log("server started")
+console.log("server started");
