@@ -17,7 +17,11 @@ try {
 } catch(e) {
   // 
 }
-ws.onmessage = (event) => {console.log(event.data) }
+
+if (ws){ws.onmessage = (event)=>{
+    console.log(event.data);
+}}
+    // onmessage = (event) => {console.log(event.data) }
   </script>
 </body>
 </html>
