@@ -9,11 +9,25 @@
     <h1>Hello Zamil its a websocket example :)</h1>
 
     <script>
-        let ws;
-        const proto = window.location.protocol ==='https:'?'wss:':'ws:';
-        ws = new WebSocket(`${proto}//${window.location.host}`);
+  let ws;
+const proto = window.location.protocol ==='https:'?'wss':'ws';
+ws = new WebSocket(`${proto}://${window.location.host}`);
 
-        ws.onmessage = (event)=>{console.log(event.data)};
+ws.onopen = function(event) {
+  console.log("WebSocket is open now.");
+};
+
+ws.onmessage = function(event) {
+  console.log("WebSocket message received:", event.data);
+};
+
+ws.onerror = function(event) {
+  console.error("WebSocket error observed:", event);
+};
+
+ws.onclose = function(event) {
+  console.log("WebSocket is closed now.", event);
+};
 
     </script>
 </body>
